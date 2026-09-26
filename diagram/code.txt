@@ -1,0 +1,40 @@
+Table category {
+  category_id integer [pk]
+  category_name varchar(30) [not null, unique]
+}
+
+Table book {
+  book_id integer [pk]
+  book_category_id integer [not null]
+  author_name varchar(30) [not null]
+  editor_name varchar(30)
+  translator_name varchar(30)
+  publisher_name varchar(30) [not null]
+  category_name varchar(30) [not null]
+}
+
+Table member {
+  member_id integer [pk]
+  member_name varchar(30) [not null]
+  member_age integer
+  member_email varchar(50)
+  member_address varchar(50)
+  member_phone_number varchar(20) [not null]
+  member_sex varchar(10) [not null]
+  member_birth datetime [not null]
+}
+
+Table rental {
+  rental_id integer [pk]
+  rental_member_id integer [not null]
+  rental_book_id integer [not null]
+  rental_date datetime [not null]
+  rental_due_date datetime [not null]
+  returned_date datetime
+}
+
+Ref: book.book_category_id > category.category_id
+
+Ref: rental.rental_member_id > member.member_id
+
+Ref: rental.rental_book_id > book.book_id

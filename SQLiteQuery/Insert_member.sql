@@ -1,12 +1,12 @@
 INSERT INTO member (
     member_id,
-    member_name,
-    member_age,
-    member_email,
-    member_address,
-    member_phone_number,
-    member_sex,
-    member_birth
+    name,
+    age,
+    email,
+    address,
+    phone_number,
+    sex,
+    birth
 ) VALUES
 (1, '김민준', 28, 'minjun.kim@example.com', '서울시 강남구', '010-1234-1001', '남', '1998-03-15'),
 (2, '이서연', 25, 'seoyeon.lee@example.com', '서울시 마포구', '010-1234-1002', '여', '2001-07-22'),

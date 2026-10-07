@@ -1,4 +1,4 @@
-INSERT INTO category (category_id, category_name) VALUES
+INSERT INTO category (category_id, name) VALUES
 (1, '소설'),
 (2, '시'),
 (3, '에세이'),

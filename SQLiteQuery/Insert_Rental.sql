@@ -1,7 +1,7 @@
 INSERT INTO rental (
     rental_id,
-    rental_member_id,
-    rental_book_id,
+    member_id,
+    book_id,
     rental_date,
     rental_due_date,
     returned_date

@@ -38,3 +38,48 @@ Ref: book.book_category_id > category.category_id
 Ref: rental.rental_member_id > member.member_id
 
 Ref: rental.rental_book_id > book.book_id
+
+
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table category {
+  category_id int [pk]
+  name varchar(30) [not null, unique]
+}
+
+Table book {
+  book_id int [pk]
+  category_id int [not null]
+  author_name varchar(30) [not null]
+  editor_name varchar(30)
+  translator_name varchar(30)
+  publisher_name varchar(30) [not null]
+  name varchar(30) [not null]
+}
+
+Table member {
+  member_id int [pk]
+  name varchar(30) [not null]
+  age int
+  email varchar(50)
+  address varchar(50)
+  phone_number varchar(20) [not null]
+  sex varchar(10) [not null]
+  birth datetime [not null]
+}
+
+Table rental {
+  rental_id int [pk]
+  member_id int [not null]
+  book_id int [not null]
+  rental_date datetime [not null]
+  rental_due_date datetime [not null]
+  returned_date datetime
+}
+
+Ref: book.category_id > category.category_id
+
+Ref: rental.member_id > member.member_id
+
+Ref: rental.book_id > book.book_id

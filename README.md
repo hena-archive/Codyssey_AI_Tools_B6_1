@@ -34,3 +34,4 @@ SQLite 종료
 ```bash
 .schema
 ```
+

@@ -688,6 +688,20 @@ ORDER BY year_month;
 
 ## 서브 쿼리
 
+### 그냥 만든 예시
+```TEXT
+SELECT name, age FROM member WHERE age > (SELECT AVG(age) FROM member);
+박지훈|32
+정현우|35
+장도현|41
+한준서|34
+오유진|31
+배현진|38
+문서윤|33
+신동욱|45
+류건우|37
+```
+
 ## 데이터 수정 및 삭제
 
 ### 생성
@@ -707,6 +721,7 @@ DELETE FROM member WHERE member_id = 1;
 
 ## 인덱스
 - 자주 사용하는 거
+- book(category_id)에 인덱스를 만든 이유를 설명으로 추가해. 예를 들어 카테고리별 책 조회나 JOIN에서 검색 성능을 개선하기 위함
 
 ```TEXT
 CREATE INDEX idx_book_category_id ON book(category_id);
